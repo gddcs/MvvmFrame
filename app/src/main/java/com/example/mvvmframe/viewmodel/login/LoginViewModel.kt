@@ -24,9 +24,6 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     fun login () : MutableLiveData<Boolean> {
         val data = MutableLiveData<Boolean>()
         if(verifyData()){
-            Log.e("TTTT","11111111")
-            data.value = false
-            Thread.sleep(1000)
             data.value = true
         }
         return data

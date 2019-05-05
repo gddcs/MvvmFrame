@@ -16,7 +16,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
         setContentView(R.layout.activity_login)
         setTitle("这是登录界面")
         showContentView()
-        bindingView.loginviewmodel = viewModel     // 双向绑定
+        bindingView.loginviewmodel = viewModel
 
         bindingView.btLogin.setOnClickListener { viewModel.login().observe(this, Observer {
             loadSuccess(it) }) }
