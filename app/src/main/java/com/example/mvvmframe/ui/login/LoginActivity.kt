@@ -20,14 +20,13 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
         bindingView.btLogin.setOnClickListener { viewModel.login().observe(this, Observer {
             loadSuccess(it) }) }
-        bindingView.btRegister.setOnClickListener { viewModel.register().observe(this, Observer { this::loadSuccess }) }
+        bindingView.btRegister.setOnClickListener { viewModel.register().observe(this, Observer { loadSuccess(it) }) }
     }
 
     /**
      * 注册或登录成功
      */
     fun loadSuccess(aBoolean: Boolean?) {
-        Log.e("TTTT","aBoolean:"+aBoolean)
         if (aBoolean != null && aBoolean) {
             finish()
         }

@@ -3,6 +3,7 @@ package com.example.mvvmframe
 import android.app.Application
 import android.content.Context
 import android.support.multidex.MultiDex
+import com.example.mvvmframe.http.HttpUtils
 
 class AppApplication : Application() {
     companion object {
@@ -12,6 +13,7 @@ class AppApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        HttpUtils.instance.init(this)
     }
 
     /**
